@@ -1,8 +1,5 @@
 # Development_-_Testing_of-_a-_System_for_Automatic_Result_Calculation_of_Exams
 
-An open-source command-line platform that automates and simplifies tasks through a robust combination of core commands, batch handling, and data export tools. It streamlines the entire workflow, from input processing to output visualization.  
-
----
 
 ## Overview  
 
