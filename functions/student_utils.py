@@ -132,6 +132,23 @@ class StudentUtils:
                     "q_crop": q.get("q_crop"),
                     "g_crop": None,
                 }
+                    # Ensure missing question numbers are also included
+        if qmap:
+            max_q = max(int(k) for k in qmap.keys())
+            for qid in range(1, max_q + 1):
+                qid_str = str(qid)
+                if qid_str not in qmap:
+                    qmap[qid_str] = {
+                        "raw": None,
+                        "raw_conf": None,
+                        "max_marks": None,
+                        "page": None,
+                        "achieved_page": None,
+                        "q_crop": None,
+                        "g_crop": None,
+                        "error": "YOLO failed to detect"
+                    }
+
 
         return student_info, qmap, per_q_seen, page_markers
 

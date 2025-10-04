@@ -74,8 +74,12 @@ class PageUtils:
         messages = []
         ok = True
         if missing:
-            messages.append(f"Missing printed pages: {missing}")
+            if actual_pages_count == expected_total:
+                messages.append(f"OCR failed to extract page markers for: {missing}")
+            else:
+                messages.append(f"YOLO failed to detect pages: {missing}")
             ok = False
+
         if extra:
             messages.append(f"Unexpected printed pages: {extra}")
             ok = False
